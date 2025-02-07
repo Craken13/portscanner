@@ -1,16 +1,13 @@
-# This is a sample Python script.
-
-# Press Ctrl+F5 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
-
+from socket import *
+def conScan(tgtHost, tgtPort):
+    try:
+        connskt = socket(AF_INET, SOCK_STREAM)
+        connskt.connect((tgtHost, tgtPort))
+        print('[+]%d/tcp open'% tgtPort)
+        connskt.close()
+    exepct:
+        print('[-]%d/tcp open'% tgtPort)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    conScan('216.58.207.238', 80)
