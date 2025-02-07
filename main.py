@@ -5,7 +5,7 @@ def conScan(tgtHost, tgtPort):
         connskt.connect((tgtHost, tgtPort))
         print('[+]%d/tcp open'% tgtPort)
         connskt.close()
-    exepct:
+    except:
         print('[-]%d/tcp open'% tgtPort)
 
 # Press the green button in the gutter to run the script.
